@@ -251,7 +251,7 @@ struct PosterCard: View {
       .padding(.horizontal, 6)
       .padding(.vertical, 3)
       .background(
-        BlurView(material: .ultraThin, blendingMode: .withinWindow)
+        BlurView(material: .hudWindow, blendingMode: .withinWindow)
           .overlay(color.opacity(0.6))
       )
       .cornerRadius(CollectionTheme.badgeCornerRadius)

@@ -357,7 +357,7 @@ public class CollectionManager: ObservableObject {
     // 主线程调用 IINA 核心播放
     DispatchQueue.main.async {
       // 优先在当前激活的 PlayerCore 中播放，或创建新的 PlayerCore
-      let player = PlayerCore.activePlayerCore
+      let player = PlayerCore.activeOrNew
       player.openURLs(urls, playlistIndex: targetIndex)
     }
   }
@@ -383,16 +383,15 @@ public class CollectionManager: ObservableObject {
           let fileURL = URL(fileURLWithPath: filePath)
 
           if let match = historyEntries.first(where: { $0.url == fileURL }) {
-            let duration = match.duration
-            let progress = match.progress
+            let durationSec = match.duration.second
+            let playedSec = match.mpvProgress?.second ?? 0.0
 
             let ep = categories[catIdx].collections[colIdx].episodes[epIdx]
-            let newPlayedTime = duration * progress
-            let isFinished = progress >= 0.90 // 播放超过 90% 视为已看
+            let isFinished = durationSec > 0 && (playedSec / durationSec) >= 0.90 // 播放超过 90% 视为已看
 
-            if abs(ep.lastPlayedTime - newPlayedTime) > 2.0 || ep.isFinished != isFinished || ep.duration != duration {
-              categories[catIdx].collections[colIdx].episodes[epIdx].duration = duration
-              categories[catIdx].collections[colIdx].episodes[epIdx].lastPlayedTime = newPlayedTime
+            if abs(ep.lastPlayedTime - playedSec) > 2.0 || ep.isFinished != isFinished || ep.duration != durationSec {
+              categories[catIdx].collections[colIdx].episodes[epIdx].duration = durationSec
+              categories[catIdx].collections[colIdx].episodes[epIdx].lastPlayedTime = playedSec
               categories[catIdx].collections[colIdx].episodes[epIdx].isFinished = isFinished
               hasChanges = true
             }
