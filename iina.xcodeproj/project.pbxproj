@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77C011012B00000100000002 /* CollectionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C011012B00000100000001 /* CollectionModels.swift */; };
+		77C011022B00000100000002 /* CollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C011022B00000100000001 /* CollectionManager.swift */; };
+		77C011032B00000100000002 /* CollectionTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C011032B00000100000001 /* CollectionTheme.swift */; };
+		77C011042B00000100000002 /* PosterGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C011042B00000100000001 /* PosterGridView.swift */; };
+		77C011052B00000100000002 /* CollectionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C011052B00000100000001 /* CollectionDetailView.swift */; };
+		77C011062B00000100000002 /* EditCollectionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C011062B00000100000001 /* EditCollectionSheet.swift */; };
+		77C011072B00000100000002 /* EditCategorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C011072B00000100000001 /* EditCategorySheet.swift */; };
+		77C011082B00000100000002 /* CollectionMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C011082B00000100000001 /* CollectionMainView.swift */; };
+		77C011092B00000100000002 /* CollectionWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C011092B00000100000001 /* CollectionWindowController.swift */; };
 		1326717E20852D0D000FA7E2 /* SubChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1326718020852D0D000FA7E2 /* SubChooseViewController.xib */; };
 		3412DB8E2C2FC64C00BBC142 /* Equalizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3412DB8D2C2FC64800BBC142 /* Equalizations.swift */; };
 		3415BC8A2FC82FD9003B3FBD /* TimePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415BC892FC82FD5003B3FBD /* TimePreviewView.swift */; };
@@ -534,6 +543,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		77C011012B00000100000001 /* CollectionModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionModels.swift; sourceTree = "<group>"; };
+		77C011022B00000100000001 /* CollectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionManager.swift; sourceTree = "<group>"; };
+		77C011032B00000100000001 /* CollectionTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTheme.swift; sourceTree = "<group>"; };
+		77C011042B00000100000001 /* PosterGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterGridView.swift; sourceTree = "<group>"; };
+		77C011052B00000100000001 /* CollectionDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDetailView.swift; sourceTree = "<group>"; };
+		77C011062B00000100000001 /* EditCollectionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCollectionSheet.swift; sourceTree = "<group>"; };
+		77C011072B00000100000001 /* EditCategorySheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCategorySheet.swift; sourceTree = "<group>"; };
+		77C011082B00000100000001 /* CollectionMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionMainView.swift; sourceTree = "<group>"; };
+		77C011092B00000100000001 /* CollectionWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionWindowController.swift; sourceTree = "<group>"; };
 		0507C25E2B5617650043AD05 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		0507C25F2B5617660043AD05 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/MainWindowController.strings; sourceTree = "<group>"; };
 		0507C2622B5617660043AD05 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/InspectorWindowController.strings; sourceTree = "<group>"; };
@@ -1907,6 +1925,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77C011002B00000100000000 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				77C011012B00000100000001 /* CollectionModels.swift */,
+				77C011022B00000100000001 /* CollectionManager.swift */,
+				77C011032B00000100000001 /* CollectionTheme.swift */,
+				77C011042B00000100000001 /* PosterGridView.swift */,
+				77C011052B00000100000001 /* CollectionDetailView.swift */,
+				77C011062B00000100000001 /* EditCollectionSheet.swift */,
+				77C011072B00000100000001 /* EditCategorySheet.swift */,
+				77C011082B00000100000001 /* CollectionMainView.swift */,
+				77C011092B00000100000001 /* CollectionWindowController.swift */,
+			);
+			name = Collections;
+			path = Collections;
+			sourceTree = "<group>";
+		};
 		49542976216C34950058F680 /* OpenInIINA */ = {
 			isa = PBXGroup;
 			children = (
@@ -2401,6 +2436,7 @@
 		84EB1ED81D2F51D3004FA5A1 /* iina */ = {
 			isa = PBXGroup;
 			children = (
+				77C011002B00000100000000 /* Collections */,
 				84FF846D1D2FF698001B318A /* deps */,
 				84A0BAA21D2FAE8200BC8DA1 /* Assets */,
 				84A0BAA71D2FAF9700BC8DA1 /* Controllers */,
@@ -2906,6 +2942,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77C011012B00000100000002 /* CollectionModels.swift in Sources */,
+				77C011022B00000100000002 /* CollectionManager.swift in Sources */,
+				77C011032B00000100000002 /* CollectionTheme.swift in Sources */,
+				77C011042B00000100000002 /* PosterGridView.swift in Sources */,
+				77C011052B00000100000002 /* CollectionDetailView.swift in Sources */,
+				77C011062B00000100000002 /* EditCollectionSheet.swift in Sources */,
+				77C011072B00000100000002 /* EditCategorySheet.swift in Sources */,
+				77C011082B00000100000002 /* CollectionMainView.swift in Sources */,
+				77C011092B00000100000002 /* CollectionWindowController.swift in Sources */,
 				E3EC8C432F94330400FBB51E /* Dialog.swift in Sources */,
 				E35306FA214808AB008FE492 /* JavascriptAPIEvent.swift in Sources */,
 				849581F11F02728700D3B359 /* InitialWindowController.swift in Sources */,

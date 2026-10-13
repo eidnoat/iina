@@ -62,6 +62,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   lazy var fontPicker: FontPickerWindowController = FontPickerWindowController()
   lazy var inspector: InspectorWindowController = InspectorWindowController()
   lazy var historyWindow: HistoryWindowController = HistoryWindowController()
+  lazy var collectionWindow: CollectionWindowController = CollectionWindowController.shared
   lazy var guideWindow: GuideWindowController = GuideWindowController()
   lazy var logWindow: LogWindowController = LogWindowController()
 
@@ -105,6 +106,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
   private func getReady() {
     menuController.bindMenuItems()
     PlayerCore.loadKeyBindings()
+    setupCollectionMenuItem()
     isReady = true
   }
 
@@ -1013,6 +1015,29 @@ class AppDelegate: NSObject, NSApplicationDelegate, SPUUpdaterDelegate {
 
   @IBAction func showHistoryWindow(_ sender: AnyObject) {
     historyWindow.showWindow(self)
+  }
+
+  @IBAction func showCollectionWindow(_ sender: AnyObject) {
+    CollectionWindowController.shared.show()
+  }
+
+  private func setupCollectionMenuItem() {
+    guard let mainMenu = NSApp.mainMenu else { return }
+    let targetMenu = mainMenu.items.first { item in
+      guard let title = item.submenu?.title else { return false }
+      return title == "Window" || title == "窗口" || title == "File" || title == "文件"
+    }?.submenu ?? mainMenu.items.first?.submenu
+
+    if let targetMenu {
+      let menuItem = NSMenuItem(
+        title: NSLocalizedString("menu.media_collection", value: "影视收藏中心", comment: "Media Collections"),
+        action: #selector(showCollectionWindow(_:)),
+        keyEquivalent: "l"
+      )
+      menuItem.keyEquivalentModifierMask = [.command]
+      menuItem.target = self
+      targetMenu.insertItem(menuItem, at: 0)
+    }
   }
 
   @IBAction func showLogWindow(_ sender: AnyObject) {
