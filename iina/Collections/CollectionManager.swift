@@ -358,7 +358,10 @@ public class CollectionManager: ObservableObject {
     DispatchQueue.main.async {
       // 优先在当前激活的 PlayerCore 中播放，或创建新的 PlayerCore
       let player = PlayerCore.activeOrNew
-      player.openURLs(urls, playlistIndex: targetIndex)
+      _ = player.openURLs(urls)
+      if targetIndex > 0 {
+        player.playFileInPlaylist(targetIndex)
+      }
     }
   }
 
